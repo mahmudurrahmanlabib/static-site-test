@@ -1032,7 +1032,7 @@ button {
 .bundle-card__footer,
 .product-card__specs,
 .delivery-banner,
-.price-stack > div,
+.price-stack>div,
 .cart-row__meta {
   display: flex;
   align-items: center;
@@ -1570,16 +1570,19 @@ button {
   from {
     transform: translateX(0);
   }
+
   to {
     transform: translateX(-50%);
   }
 }
 
 @keyframes float-book {
+
   0%,
   100% {
     transform: translateY(0) rotate(var(--book-rotate, 0deg));
   }
+
   50% {
     transform: translateY(-0.55rem) rotate(var(--book-rotate, 0deg));
   }
@@ -1702,6 +1705,7 @@ button {
 }
 
 @media (max-width: 560px) {
+
   .site-header,
   .section,
   .ticker-band,
@@ -1783,3 +1787,5 @@ button {
     scroll-behavior: auto !important;
   }
 }
+
+#final
