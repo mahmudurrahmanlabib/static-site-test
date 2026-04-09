@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Candlestick is a bold storefront for printed trading books, sold as single volumes or conviction bundles and delivered to your doorstep."
+    />
+    <title>Candlestick Library</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600;6..72,700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="site-noise" aria-hidden="true"></div>
+    <div class="site-glow site-glow--lime" aria-hidden="true"></div>
+    <div class="site-glow site-glow--ember" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="brand-lockup">
+        <a class="brand-mark" href="#top" aria-label="Candlestick home">
+          <span class="brand-mark__ticker"></span>
+          <span class="brand-mark__text">CANDLESTICK</span>
+        </a>
+        <p class="brand-subtitle">Printed trading books / delivered to your desk</p>
+      </div>
+
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#singles">Singles</a>
+        <a href="#bundles">Bundles</a>
+        <a href="#delivery">Delivery</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <button class="cart-toggle" type="button" aria-expanded="false" aria-controls="order-drawer">
+        <span>Order Desk</span>
+        <strong id="cart-count">0</strong>
+      </button>
+    </header>
+
+    <main id="top">
+      <section class="hero section">
+        <div class="hero-copy">
+          <p class="eyebrow">
+            Printed market education / single books, conviction bundles, doorstep delivery
+          </p>
+          <h1 class="hero-title" aria-label="Printed edge for live markets">
+            <span>Printed</span>
+            <span class="hero-title__accent">edge</span>
+            <span>for live</span>
+            <span>markets</span>
+          </h1>
+          <p class="hero-lede">
+            Build a desk that teaches back. Candlestick sells high-utility trading books you can
+            mark up, revisit, and stack into a full learning system.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button button--primary" href="#singles">Browse Singles</a>
+            <a class="button button--ghost" href="#bundles">Take a Bundle</a>
+          </div>
+
+          <ul class="hero-meta" aria-label="Store benefits">
+            <li>Cash on delivery ready</li>
+            <li>City express + nationwide</li>
+            <li>Free delivery on the full desk stack</li>
+          </ul>
+        </div>
+
+        <div class="hero-stage tilt-target">
+          <div class="hero-stage__grid" aria-hidden="true"></div>
+
+          <div class="book-spine book-spine--dark">
+            <span>Price Action Blueprint</span>
+          </div>
+          <div class="book-spine book-spine--signal">
+            <span>Risk Ledger</span>
+          </div>
+          <div class="book-spine book-spine--ember">
+            <span>Orderflow Atlas</span>
+          </div>
+          <div class="book-spine book-spine--paper">
+            <span>Journal Like a Fund</span>
+          </div>
+          <div class="book-spine book-spine--dark-tall">
+            <span>Mindset Under Fire</span>
+          </div>
+
+          <div class="hero-sticker hero-sticker--top">
+            <small>Desk Stack</small>
+            <strong>Save BDT 1,180</strong>
+          </div>
+          <div class="hero-sticker hero-sticker--bottom">
+            <small>Delivery lane</small>
+            <strong>48h city / 3-5 days nationwide</strong>
+          </div>
+          <div class="hero-ribbon">Singles for precision / bundles for conviction / books that stay on the desk</div>
+        </div>
+      </section>
+
+      <section class="ticker-band" aria-label="Highlights">
+        <div class="ticker-band__track">
+          <span>Printed trading books</span>
+          <span>Buy one title</span>
+          <span>Or build a full desk stack</span>
+          <span>Doorstep delivery</span>
+          <span>Annotate. Review. Repeat.</span>
+          <span>Free delivery on bundles</span>
+          <span>Printed trading books</span>
+          <span>Buy one title</span>
+          <span>Or build a full desk stack</span>
+          <span>Doorstep delivery</span>
+          <span>Annotate. Review. Repeat.</span>
+          <span>Free delivery on bundles</span>
+        </div>
+      </section>
+
+      <section class="offer-split section reveal">
+        <div class="section-heading">
+          <p class="section-kicker">Two ways in</p>
+          <h2>One book fixes a weakness. A bundle builds a system.</h2>
+        </div>
+
+        <div class="offer-split__grid">
+          <article class="offer-card offer-card--single">
+            <div class="offer-card__head">
+              <p class="offer-card__label">Single books</p>
+              <strong class="offer-card__price">From BDT 980</strong>
+            </div>
+            <h3>Use singles when you know exactly what your desk is missing.</h3>
+            <p>
+              Tight picks for price action, risk, journaling, orderflow, and trader psychology.
+            </p>
+            <ul>
+              <li>Lower entry point</li>
+              <li>Perfect for targeted gaps</li>
+              <li>Mix and match as you grow</li>
+            </ul>
+            <a class="button button--ghost" href="#singles">Shop singles</a>
+          </article>
+
+          <article class="offer-card offer-card--bundle">
+            <div class="offer-card__head">
+              <p class="offer-card__label">Bundle offers</p>
+              <strong class="offer-card__price">Save up to BDT 1,180</strong>
+            </div>
+            <h3>Use bundles when you want a desk-level operating system, not scattered notes.</h3>
+            <p>
+              Curated stacks with savings, sequencing, and free delivery on the full collection.
+            </p>
+            <ul>
+              <li>Higher perceived value</li>
+              <li>Clear progression from setup to review</li>
+              <li>Best offer for serious traders</li>
+            </ul>
+            <a class="button button--primary" href="#bundles">Compare bundles</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="thesis section reveal">
+        <div class="section-heading">
+          <p class="section-kicker">Why this format works</p>
+          <h2>The market is fast. Physical books slow your thinking down just enough to make it better.</h2>
+        </div>
+
+        <div class="thesis-grid">
+          <article class="thesis-card">
+            <span class="thesis-card__index">01</span>
+            <h3>Margin notes become muscle memory.</h3>
+            <p>
+              Tag setups, mark invalidation, underline rules. A printed page keeps your process in
+              the room instead of buried in screenshots.
+            </p>
+          </article>
+          <article class="thesis-card">
+            <span class="thesis-card__index">02</span>
+            <h3>Bundles remove random learning.</h3>
+            <p>
+              Start with structure, lock in risk, then build review discipline. The stack creates a
+              sequence your future self can follow.
+            </p>
+          </article>
+          <article class="thesis-card">
+            <span class="thesis-card__index">03</span>
+            <h3>Delivery is part of the promise.</h3>
+            <p>
+              Printed, packed, and sent to your doorstep so the books land where the decisions are
+              made: beside your charts.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="products section reveal" id="singles">
+        <div class="section-heading">
+          <p class="section-kicker">Singles</p>
+          <h2>Choose the exact book your current weakness is asking for.</h2>
+        </div>
+
+        <div class="product-grid">
+          <article
+            class="product-card tilt-target"
+            data-id="price-action-blueprint"
+            data-title="Price Action Blueprint"
+            data-price="1250"
+            data-type="single"
+          >
+            <div class="product-card__meta">
+              <span class="pill">Vol. 01</span>
+              <span class="product-card__price">BDT 1,250</span>
+            </div>
+            <h3>Price Action Blueprint</h3>
+            <p>
+              Structure, liquidity, breakout failure, entry logic, and invalidation written for the
+              real trading desk.
+            </p>
+            <div class="product-card__specs">
+              <span>172 pages</span>
+              <span>Annotated diagrams</span>
+            </div>
+            <button class="button button--ghost add-to-cart" type="button">Add Single</button>
+          </article>
+
+          <article
+            class="product-card tilt-target"
+            data-id="risk-ledger"
+            data-title="Risk Ledger"
+            data-price="1100"
+            data-type="single"
+          >
+            <div class="product-card__meta">
+              <span class="pill">Vol. 02</span>
+              <span class="product-card__price">BDT 1,100</span>
+            </div>
+            <h3>Risk Ledger</h3>
+            <p>
+              Position sizing, drawdown limits, exposure control, and loss containment for traders
+              who want to stay in the game.
+            </p>
+            <div class="product-card__specs">
+              <span>148 pages</span>
+              <span>Rule templates</span>
+            </div>
+            <button class="button button--ghost add-to-cart" type="button">Add Single</button>
+          </article>
+
+          <article
+            class="product-card tilt-target"
+            data-id="orderflow-atlas"
+            data-title="Orderflow Atlas"
+            data-price="1450"
+            data-type="single"
+          >
+            <div class="product-card__meta">
+              <span class="pill">Vol. 03</span>
+              <span class="product-card__price">BDT 1,450</span>
+            </div>
+            <h3>Orderflow Atlas</h3>
+            <p>
+              Read participation, aggression, absorption, and auction behavior without turning your
+              chart review into noise.
+            </p>
+            <div class="product-card__specs">
+              <span>188 pages</span>
+              <span>Advanced entries</span>
+            </div>
+            <button class="button button--ghost add-to-cart" type="button">Add Single</button>
+          </article>
+
+          <article
+            class="product-card tilt-target"
+            data-id="journal-like-a-fund"
+            data-title="Journal Like a Fund"
+            data-price="980"
+            data-type="single"
+          >
+            <div class="product-card__meta">
+              <span class="pill">Vol. 04</span>
+              <span class="product-card__price">BDT 980</span>
+            </div>
+            <h3>Journal Like a Fund</h3>
+            <p>
+              Review sheets, setup scoring, process grading, and clean post-trade habits that stop
+              repeated mistakes.
+            </p>
+            <div class="product-card__specs">
+              <span>136 pages</span>
+              <span>Weekly review sheets</span>
+            </div>
+            <button class="button button--ghost add-to-cart" type="button">Add Single</button>
+          </article>
+
+          <article
+            class="product-card tilt-target"
+            data-id="mindset-under-fire"
+            data-title="Mindset Under Fire"
+            data-price="1050"
+            data-type="single"
+          >
+            <div class="product-card__meta">
+              <span class="pill">Vol. 05</span>
+              <span class="product-card__price">BDT 1,050</span>
+            </div>
+            <h3>Mindset Under Fire</h3>
+            <p>
+              Discipline, boredom, revenge-trade defense, and routines for handling days when your
+              emotions want the keyboard.
+            </p>
+            <div class="product-card__specs">
+              <span>164 pages</span>
+              <span>Pre-market rituals</span>
+            </div>
+            <button class="button button--ghost add-to-cart" type="button">Add Single</button>
+          </article>
+        </div>
+      </section>
+
+      <section class="bundles section reveal" id="bundles">
+        <div class="section-heading">
+          <p class="section-kicker">Bundles</p>
+          <h2>For traders who want the whole desk to move in one direction.</h2>
+        </div>
+
+        <div class="bundle-grid">
+          <article
+            class="bundle-card tilt-target"
+            data-id="starter-stack"
+            data-title="Starter Stack"
+            data-price="2950"
+            data-type="bundle"
+          >
+            <div class="bundle-card__eyebrow">
+              <span class="pill">Bundle / Tactical</span>
+              <span class="bundle-card__save">Save BDT 380</span>
+            </div>
+            <h3>Starter Stack</h3>
+            <p>
+              Price action, risk management, and journaling packed together for traders fixing
+              execution first.
+            </p>
+            <ul class="bundle-card__list">
+              <li>Price Action Blueprint</li>
+              <li>Risk Ledger</li>
+              <li>Journal Like a Fund</li>
+            </ul>
+            <div class="bundle-card__footer">
+              <strong>BDT 2,950</strong>
+              <button class="button button--ghost add-to-cart" type="button">Add Bundle</button>
+            </div>
+          </article>
+
+          <article
+            class="bundle-card bundle-card--featured tilt-target"
+            data-id="desk-stack"
+            data-title="Desk Stack"
+            data-price="4650"
+            data-type="bundle"
+            data-free-delivery="true"
+          >
+            <div class="bundle-card__eyebrow">
+              <span class="pill">Bundle / Conviction</span>
+              <span class="bundle-card__save">Free delivery + save BDT 1,180</span>
+            </div>
+            <h3>Desk Stack</h3>
+            <p>
+              The full five-book operating system for traders who want structure, review, psychology,
+              and execution to live together on the desk.
+            </p>
+            <ul class="bundle-card__list">
+              <li>All 5 printed volumes</li>
+              <li>Sequenced for progressive learning</li>
+              <li>Best value offer on the page</li>
+            </ul>
+            <div class="bundle-card__footer">
+              <strong>BDT 4,650</strong>
+              <button class="button button--primary add-to-cart" type="button">Take the Full Stack</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="delivery section reveal" id="delivery">
+        <div class="section-heading">
+          <p class="section-kicker">Delivery</p>
+          <h2>Simple route. Clear handoff. Books end up where decisions get made.</h2>
+        </div>
+
+        <div class="delivery-grid">
+          <article class="delivery-card">
+            <span class="delivery-card__step">01</span>
+            <h3>Build your stack</h3>
+            <p>
+              Buy a single title or take a bundle. The order desk keeps totals, savings, and delivery
+              status visible.
+            </p>
+          </article>
+          <article class="delivery-card">
+            <span class="delivery-card__step">02</span>
+            <h3>Drop your address</h3>
+            <p>
+              Name, phone, full doorstep address, and an optional note for building, floor, or gate
+              instructions.
+            </p>
+          </article>
+          <article class="delivery-card">
+            <span class="delivery-card__step">03</span>
+            <h3>Receive the stack</h3>
+            <p>
+              Express city delivery in 48 hours. Nationwide routes usually land within 3 to 5 days,
+              depending on area.
+            </p>
+          </article>
+        </div>
+
+        <div class="delivery-banner">
+          <div>
+            <small>Delivery rule</small>
+            <strong>Standard shipping is BDT 90. Orders from BDT 4,500 and the Desk Stack ship free.</strong>
+          </div>
+          <div>
+            <small>Offer logic</small>
+            <strong>Singles are for tactical fixes. Bundles are for traders building repeatable process.</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="quote-strip">
+        <p>Less random content. More physical conviction. More notes in the margin. More edge at the desk.</p>
+      </section>
+
+      <section class="faq section reveal" id="faq">
+        <div class="section-heading">
+          <p class="section-kicker">FAQ</p>
+          <h2>Short answers for the practical questions.</h2>
+        </div>
+
+        <div class="faq-list">
+          <article class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Are these physical books or PDFs?</span>
+              <span class="faq-symbol">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                This storefront is built around printed books only. The idea is physical learning:
+                notes, highlights, desk reference, and revisiting chapters without tab overload.
+              </p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Can I mix singles and bundles in the same order?</span>
+              <span class="faq-symbol">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Yes. The order desk treats the cart as one stack, so you can add a bundle and still
+                layer in an extra single title.
+              </p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Does the site support cash on delivery?</span>
+              <span class="faq-symbol">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                The interface is designed for that flow. The current front-end stores order requests
+                locally and is ready to connect to your actual checkout or messaging backend.
+              </p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>What happens after someone submits an order?</span>
+              <span class="faq-symbol">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                The site validates the form, stores the request in the browser, and shows a success
+                state so the complete front-end flow is ready for integration.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="final-cta section reveal">
+        <div class="final-cta__copy">
+          <p class="section-kicker">Ready to order</p>
+          <h2>Put a real trading library beside the screen.</h2>
+          <p>
+            Open the order desk, choose singles or bundles, and stage the exact stack you want to
+            ship.
+          </p>
+        </div>
+        <button class="button button--primary button--drawer" type="button">Open Order Desk</button>
+      </section>
+    </main>
+
+    <aside class="order-drawer" id="order-drawer" aria-hidden="true" aria-labelledby="order-drawer-title">
+      <div class="order-drawer__backdrop"></div>
+      <div class="order-drawer__panel">
+        <div class="order-drawer__header">
+          <div>
+            <p class="section-kicker">Your stack</p>
+            <h2 id="order-drawer-title">Order Desk</h2>
+          </div>
+          <button class="order-drawer__close" type="button" aria-label="Close order desk">Close</button>
+        </div>
+
+        <div class="order-drawer__content">
+          <div class="order-drawer__items">
+            <div class="cart-empty" id="cart-empty">
+              No books in the stack yet. Add a single title or take a bundle to start.
+            </div>
+            <ul class="cart-list" id="cart-list" aria-live="polite"></ul>
+          </div>
+
+          <div class="order-drawer__summary">
+            <div class="shipping-picker" role="radiogroup" aria-label="Delivery speed">
+              <label class="shipping-option">
+                <input type="radio" name="shipping" value="standard" checked />
+                <span>
+                  <strong>Standard delivery</strong>
+                  <small>BDT 90 / free on big orders</small>
+                </span>
+              </label>
+              <label class="shipping-option">
+                <input type="radio" name="shipping" value="express" />
+                <span>
+                  <strong>Express delivery</strong>
+                  <small>BDT 180 / fastest route</small>
+                </span>
+              </label>
+            </div>
+
+            <div class="price-stack">
+              <div>
+                <span>Subtotal</span>
+                <strong id="subtotal">BDT 0</strong>
+              </div>
+              <div>
+                <span>Delivery</span>
+                <strong id="delivery-fee">BDT 0</strong>
+              </div>
+              <div class="price-stack__total">
+                <span>Total</span>
+                <strong id="grand-total">BDT 0</strong>
+              </div>
+            </div>
+
+            <form class="order-form" id="order-form" novalidate>
+              <div class="field-group">
+                <label for="customer-name">Name</label>
+                <input id="customer-name" name="name" type="text" placeholder="Your full name" required />
+              </div>
+              <div class="field-group">
+                <label for="customer-phone">Phone</label>
+                <input id="customer-phone" name="phone" type="tel" placeholder="01XXXXXXXXX" required />
+              </div>
+              <div class="field-group">
+                <label for="customer-address">Doorstep address</label>
+                <textarea
+                  id="customer-address"
+                  name="address"
+                  rows="3"
+                  placeholder="House, road, area, city, floor, landmark"
+                  required
+                ></textarea>
+              </div>
+              <div class="field-group">
+                <label for="customer-note">Delivery note</label>
+                <textarea
+                  id="customer-note"
+                  name="note"
+                  rows="2"
+                  placeholder="Optional note for the rider"
+                ></textarea>
+              </div>
+
+              <button class="button button--primary button--submit" type="submit">
+                Place Order Request
+              </button>
+              <p class="form-note">
+                Front-end only flow: this request is stored locally so you can connect the final form
+                to checkout, WhatsApp, or COD operations later.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="toast" id="toast" aria-live="polite"></div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
