@@ -1,6 +1,5 @@
 const STORAGE_KEY = "candlestick-cart-v1";
 const ORDER_STORAGE_KEY = "candlestick-orders-v1";
-const THEME_STORAGE_KEY = "candlestick-theme";
 
 const catalog = Array.from(document.querySelectorAll("[data-id]")).reduce((items, element) => {
   const { id, title, price, type, freeDelivery } = element.dataset;
@@ -15,9 +14,6 @@ const catalog = Array.from(document.querySelectorAll("[data-id]")).reduce((items
 }, {});
 
 const elements = {
-  themeToggle: document.querySelector(".theme-toggle"),
-  themeStatus: document.getElementById("theme-status"),
-  themeColorMeta: document.querySelector('meta[name="theme-color"]'),
   cartToggle: document.querySelector(".cart-toggle"),
   drawer: document.querySelector(".order-drawer"),
   drawerBackdrop: document.querySelector(".order-drawer__backdrop"),
@@ -41,7 +37,6 @@ const elements = {
 
 let cart = readStorage(STORAGE_KEY, {});
 let toastTimeout = null;
-const themeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
 
 function readStorage(key, fallback) {
   try {
@@ -57,81 +52,6 @@ function writeStorage(key, value) {
     window.localStorage.setItem(key, JSON.stringify(value));
   } catch (error) {
     return;
-  }
-}
-
-function readThemePreference() {
-  try {
-    return window.localStorage.getItem(THEME_STORAGE_KEY);
-  } catch (error) {
-    return null;
-  }
-}
-
-function writeThemePreference(value) {
-  try {
-    window.localStorage.setItem(THEME_STORAGE_KEY, value);
-  } catch (error) {
-    return;
-  }
-}
-
-function resolveTheme() {
-  const savedTheme = readThemePreference();
-  if (savedTheme === "light" || savedTheme === "dark") {
-    return savedTheme;
-  }
-
-  return themeMediaQuery.matches ? "dark" : "light";
-}
-
-function syncThemeUi(theme) {
-  if (!elements.themeToggle || !elements.themeStatus) {
-    return;
-  }
-
-  const isDark = theme === "dark";
-  elements.themeToggle.setAttribute("aria-pressed", String(isDark));
-  elements.themeToggle.setAttribute(
-    "aria-label",
-    isDark ? "Switch to light mode" : "Switch to dark mode"
-  );
-  elements.themeStatus.textContent = isDark ? "Dark" : "Light";
-
-  if (elements.themeColorMeta) {
-    elements.themeColorMeta.setAttribute("content", isDark ? "#0c0f0e" : "#f7f1e4");
-  }
-}
-
-function applyTheme(theme) {
-  document.documentElement.dataset.theme = theme;
-  syncThemeUi(theme);
-}
-
-function attachThemeEvents() {
-  applyTheme(resolveTheme());
-
-  if (elements.themeToggle) {
-    elements.themeToggle.addEventListener("click", () => {
-      const nextTheme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
-      applyTheme(nextTheme);
-      writeThemePreference(nextTheme);
-      showToast(nextTheme === "dark" ? "After Hours enabled" : "Light mode restored");
-    });
-  }
-
-  const handleSystemThemeChange = (event) => {
-    if (readThemePreference()) {
-      return;
-    }
-
-    applyTheme(event.matches ? "dark" : "light");
-  };
-
-  if (typeof themeMediaQuery.addEventListener === "function") {
-    themeMediaQuery.addEventListener("change", handleSystemThemeChange);
-  } else if (typeof themeMediaQuery.addListener === "function") {
-    themeMediaQuery.addListener(handleSystemThemeChange);
   }
 }
 
@@ -453,7 +373,9 @@ function handleOrderSubmit(event) {
 
 elements.orderForm.addEventListener("submit", handleOrderSubmit);
 
-attachThemeEvents();
+if (window.CandlestickTheme && typeof window.CandlestickTheme.syncUi === "function") {
+  window.CandlestickTheme.syncUi();
+}
 attachCartEvents();
 attachDrawerEvents();
 attachShippingEvents();
