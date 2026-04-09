@@ -7,6 +7,7 @@
       name="description"
       content="Candlestick is a bold storefront for printed trading books, sold as single volumes or conviction bundles and delivered to your doorstep."
     />
+    <meta name="theme-color" content="#f7f1e4" />
     <title>Candlestick Library</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,7 +16,19 @@
       rel="stylesheet"
     />
     <script>
-      document.documentElement.classList.add("js");
+      (function () {
+        var root = document.documentElement;
+        root.classList.add("js");
+
+        try {
+          var savedTheme = window.localStorage.getItem("candlestick-theme");
+          var preferredTheme =
+            savedTheme || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+          root.dataset.theme = preferredTheme;
+        } catch (error) {
+          root.dataset.theme = "light";
+        }
+      })();
     </script>
     <link rel="stylesheet" href="./styles.css" />
   </head>
@@ -40,10 +53,23 @@
         <a href="#faq">FAQ</a>
       </nav>
 
-      <button class="cart-toggle" type="button" aria-expanded="false" aria-controls="order-drawer">
-        <span>Order Desk</span>
-        <strong id="cart-count">0</strong>
-      </button>
+      <div class="header-actions">
+        <button
+          class="theme-toggle"
+          type="button"
+          aria-pressed="false"
+          aria-label="Switch to dark mode"
+        >
+          <span class="theme-toggle__orb" aria-hidden="true"></span>
+          <span class="theme-toggle__label">After Hours</span>
+          <strong class="theme-toggle__status" id="theme-status">Light</strong>
+        </button>
+
+        <button class="cart-toggle" type="button" aria-expanded="false" aria-controls="order-drawer">
+          <span>Order Desk</span>
+          <strong id="cart-count">0</strong>
+        </button>
+      </div>
     </header>
 
     <main id="top">
